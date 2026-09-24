@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Luna · Agente de IA para tu negocio — Sabadell / Barcelona</title>
+<meta name="description" content="Agente de IA que atiende tus clientes 24/7 por WhatsApp e Instagram. Automatiza respuestas, califica leads y agenda citas. Planes desde 89 €/mes." />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root { --accent: #7c6cff; --accent2: #00e0b8; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: #0b0b14; color: #eceaf6; overflow-x: hidden; }
+  h1,h2,h3,.font-display { font-family: 'Sora', sans-serif; }
+  .grad-text { background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .glass { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.09); backdrop-filter: blur(14px); }
+  .persp { perspective: 1200px; }
+  .card-3d { transform-style: preserve-3d; will-change: transform; }
+  .badge { background: linear-gradient(90deg, rgba(124,108,255,.18), rgba(0,224,184,.18)); border: 1px solid rgba(124,108,255,.35); }
+  .glow { box-shadow: 0 0 80px -20px rgba(124,108,255,.55); }
+  ::selection { background: var(--accent); color: #fff; }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- NAV -->
+<nav class="fixed top-0 inset-x-0 z-50 glass">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <span class="font-display font-800 text-xl tracking-tight">Luna<span class="grad-text">·IA</span></span>
+    <div class="hidden md:flex gap-8 text-sm text-white/70">
+      <a href="#beneficios" class="hover:text-white transition">Beneficios</a>
+      <a href="#como" class="hover:text-white transition">Cómo funciona</a>
+      <a href="#setup" class="hover:text-white transition">Setup vs cuota</a>
+      <a href="#planos" class="hover:text-white transition">Planes</a>
+    </div>
+    <a href="#planos" class="text-sm font-semibold px-4 py-2 rounded-full badge hover:opacity-80 transition">Ver planes</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="relative min-h-screen flex items-center justify-center persp overflow-hidden pt-20">
+  <div class="absolute inset-0 opacity-25" style="background: radial-gradient(60% 50% at 70% 30%, rgba(124,108,255,.5), transparent 70%), radial-gradient(40% 40% at 20% 80%, rgba(0,224,184,.35), transparent 70%);"></div>
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
+    <div>
+      <p class="badge inline-block text-xs font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full mb-6 hero-el">Sabadell · Barcelona · España</p>
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-[1.05] hero-el">Tu agente de IA que <span class="grad-text">atiende, vende y agenda</span> 24/7</h1>
+      <p class="mt-6 text-lg text-white/70 max-w-lg hero-el">Luna responde por WhatsApp e Instagram en segundos, califica a cada lead y agenda citas mientras tú te dedicas a tu negocio. Sin contratar a nadie más.</p>
+      <div class="mt-8 flex flex-wrap gap-4 hero-el">
+        <a href="#planos" class="px-7 py-3.5 rounded-full font-semibold text-[#0b0b14] glow" style="background: linear-gradient(90deg, var(--accent), var(--accent2));">Quiero mi agente</a>
+        <a href="#como" class="px-7 py-3.5 rounded-full font-semibold glass hover:bg-white/10 transition">Cómo funciona</a>
+      </div>
+      <div class="mt-10 flex gap-8 text-sm text-white/60 hero-el">
+        <div><span class="font-display text-2xl font-bold text-white" data-count="24">0</span>/7<br>disponible</div>
+        <div><span class="font-display text-2xl font-bold text-white">&lt;5</span>s<br>respuesta media</div>
+        <div><span class="font-display text-2xl font-bold text-white" data-count="100">0</span>%<br>en tu tono</div>
+      </div>
+    </div>
+    <!-- 3D phone mock -->
+    <div class="hidden md:flex justify-center">
+      <div id="phone" class="card-3d w-72 h-[560px] rounded-[2.5rem] glass p-4 glow">
+        <div class="w-full h-full rounded-[2rem] bg-[#10101d] p-4 flex flex-col gap-3 overflow-hidden">
+          <div class="flex items-center gap-2 pb-2 border-b border-white/10">
+            <div class="w-8 h-8 rounded-full badge"></div>
+            <div><p class="text-sm font-semibold">Luna · tu negocio</p><p class="text-[11px] text-emerald-400">en línea</p></div>
+          </div>
+          <div class="bg-white/8 rounded-2xl rounded-tl-sm p-3 text-sm chat-bubble">Hola 👋 ¿en qué puedo ayudarte?</div>
+          <div class="bg-[#2a2a44] rounded-2xl rounded-tr-sm p-3 text-sm self-end chat-bubble">Quiero info de precios</div>
+          <div class="bg-white/8 rounded-2xl rounded-tl-sm p-3 text-sm chat-bubble">¡Claro! Te paso la tabla y te agendo una visita ¿te viene bien mañana a las 10:00? 📅</div>
+          <div class="bg-[#2a2a44] rounded-2xl rounded-tr-sm p-3 text-sm self-end chat-bubble">Perfecto ✅</div>
+          <div class="badge rounded-2xl p-3 text-xs chat-bubble">✓ Cita creada: mañana 10:00<br>✓ Lead calificado: alto interés<br>✓ Resumen enviado a tu equipo</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- BENEFICIOS -->
+<section id="beneficios" class="py-28 relative">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl md:text-5xl font-extrabold text-center reveal-3d">Todo lo que hace <span class="grad-text">por ti</span></h2>
+    <p class="text-center text-white/60 mt-4 max-w-2xl mx-auto reveal-3d">Una sola agente cubre el trabajo de atención al cliente, ventas y agenda. Estos son los resultados desde el primer día.</p>
+    <div class="persp grid md:grid-cols-3 gap-6 mt-16">
+      <div class="card-3d glass rounded-3xl p-8">
+        <div class="text-3xl mb-4">⚡</div>
+        <h3 class="font-bold text-xl mb-2">Respuesta instantánea 24/7</h3>
+        <p class="text-white/60 text-sm">Ningún cliente espera más de 5 segundos, ni de noche, ni fines de semana. Cada mensaje recibe respuesta en tu tono y con tu información.</p>
+      </div>
+      <div class="card-3d glass rounded-3xl p-8">
+        <div class="text-3xl mb-4">🎯</div>
+        <h3 class="font-bold text-xl mb-2">Cada lead calificado</h3>
+        <p class="text-white/60 text-sm">Luna pregunta, filtra y puntúa a cada contacto: quién está listo para comprar, quién necesita seguimiento y quién no encaja.</p>
+      </div>
+      <div class="card-3d glass rounded-3xl p-8">
+        <div class="text-3xl mb-4">📅</div>
+        <h3 class="font-bold text-xl mb-2">Agenda automática</h3>
+        <p class="text-white/60 text-sm">Conectada con Google Calendar: propone huecos, confirma citas y envía recordatorios para que nadie falte.</p>
+      </div>
+      <div class="card-3d glass rounded-3xl p-8">
+        <div class="text-3xl mb-4">📣</div>
+        <h3 class="font-bold text-xl mb-2">WhatsApp + Instagram</h3>
+        <p class="text-white/60 text-sm">Una sola agente atiende ambos canales con contexto compartido: si un cliente escribe por donde sea, ella lo reconoce.</p>
+      </div>
+      <div class="card-3d glass rounded-3xl p-8">
+        <div class="text-3xl mb-4">🧠</div>
+        <h3 class="font-bold text-xl mb-2">Memoria de clientes</h3>
+        <p class="text-white/60 text-sm">Recuerda cada conversación, preferencia y pedido. El cliente siente que habla con alguien que conoce su negocio de siempre.</p>
+      </div>
+      <div class="card-3d glass rounded-3xl p-8">
+        <div class="text-3xl mb-4">📊</div>
+        <h3 class="font-bold text-xl mb-2">Panel y reportes</h3>
+        <p class="text-white/60 text-sm">Conversaciones, leads y citas en un panel claro. Reportes periódicos para saber exactamente qué está generando ingresos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section id="como" class="py-28 bg-white/[.02]">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl md:text-5xl font-extrabold text-center reveal-3d">En marcha en <span class="grad-text">7 días</span></h2>
+    <div class="persp grid md:grid-cols-3 gap-6 mt-16">
+      <div class="card-3d glass rounded-3xl p-8 text-center">
+        <p class="font-display text-5xl font-extrabold grad-text mb-4">01</p>
+        <h3 class="font-bold text-lg mb-2">Nos cuentas tu negocio</h3>
+        <p class="text-white/60 text-sm">Una sesión breve: servicios, precios, tono y preguntas frecuentes. Con eso entrenamos a tu agente.</p>
+      </div>
+      <div class="card-3d glass rounded-3xl p-8 text-center">
+        <p class="font-display text-5xl font-extrabold grad-text mb-4">02</p>
+        <h3 class="font-bold text-lg mb-2">Entrenamos y conectamos</h3>
+        <p class="text-white/60 text-sm">Luna aprende tu catálogo, conecta con tu WhatsApp, Instagram y calendario, y probamos todo contigo.</p>
+      </div>
+      <div class="card-3d glass rounded-3xl p-8 text-center">
+        <p class="font-display text-5xl font-extrabold grad-text mb-4">03</p>
+        <h3 class="font-bold text-lg mb-2">Atiende sola, tú decides</h3>
+        <p class="text-white/60 text-sm">Cada lead importante te llega con aviso. Tú solo entras cuando toca cerrar la venta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SETUP VS MENSALIDADE -->
+<section id="setup" class="py-28">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-3xl md:text-5xl font-extrabold text-center reveal-3d">Pago único <span class="grad-text">+ cuota mensual</span></h2>
+    <p class="text-center text-white/60 mt-4 reveal-3d">Sin sorpresas ni letra pequeña. Así funciona la estructura de precio:</p>
+    <div class="persp grid md:grid-cols-2 gap-6 mt-14">
+      <div class="card-3d glass rounded-3xl p-9">
+        <p class="badge inline-block text-xs font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full mb-5">Pago único · setup</p>
+        <h3 class="font-bold text-2xl mb-3">La construcción de tu agente</h3>
+        <p class="text-white/60 text-sm mb-4">Se paga una sola vez al empezar. Incluye:</p>
+        <ul class="space-y-2.5 text-sm text-white/75">
+          <li>✓ Entrenamiento de la IA con tu negocio</li>
+          <li>✓ Conexión de WhatsApp e Instagram</li>
+          <li>✓ Integración con tu calendario y herramientas</li>
+          <li>✓ Flujos de conversación a medida</li>
+          <li>✓ Pruebas y puesta en marcha</li>
+        </ul>
+      </div>
+      <div class="card-3d glass rounded-3xl p-9">
+        <p class="badge inline-block text-xs font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full mb-5">Cuota mensual · mensualidad</p>
+        <h3 class="font-bold text-2xl mb-3">El servicio continuo</h3>
+        <p class="text-white/60 text-sm mb-4">Mantén a tu agente trabajando cada mes. Incluye:</p>
+        <ul class="space-y-2.5 text-sm text-white/75">
+          <li>✓ Servidores, infraestructura y consumo de IA</li>
+          <li>✓ Actualizaciones y mejoras continuas</li>
+          <li>✓ Monitorización y soporte</li>
+          <li>✓ Reportes periódicos</li>
+          <li>✓ Cancela cuando quieras, sin permanencia</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANOS -->
+<section id="planos" class="py-28 bg-white/[.02]">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl md:text-5xl font-extrabold text-center reveal-3d">Planes para <span class="grad-text">cada etapa</span></h2>
+    <p class="text-center text-white/60 mt-4 reveal-3d">Todos con pago único de setup y cuota mensual. IVA no incluido.</p>
+    <div class="persp grid md:grid-cols-3 gap-6 mt-16 items-stretch">
+      <div class="card-3d glass rounded-3xl p-8 flex flex-col">
+        <h3 class="font-bold text-xl">Esencial</h3>
+        <p class="text-white/55 text-sm mt-1">Para empezar a no perder ni un mensaje.</p>
+        <p class="mt-6"><span class="font-display text-3xl font-extrabold">490 €</span> <span class="text-white/50 text-sm">setup único</span></p>
+        <p class="mt-1"><span class="grad-text font-display text-3xl font-extrabold">89 €</span> <span class="text-white/50 text-sm">/mes</span></p>
+        <ul class="mt-6 space-y-2 text-sm text-white/75 flex-1">
+          <li>✓ WhatsApp 24/7: FAQ, respuestas y calificación de leads</li>
+          <li>✓ Agendamiento de citas</li>
+          <li>✓ 1 número de WhatsApp</li>
+          <li>✓ Reporte mensual</li>
+        </ul>
+        <a href="https://wa.me/" class="mt-8 text-center px-6 py-3 rounded-full glass font-semibold hover:bg-white/10 transition">Empezar</a>
+      </div>
+      <div class="card-3d rounded-3xl p-8 flex flex-col relative glow" style="background: linear-gradient(160deg, rgba(124,108,255,.16), rgba(0,224,184,.10)); border: 1px solid rgba(124,108,255,.45);">
+        <span class="absolute -top-3 left-1/2 -translate-x-1/2 badge text-xs font-semibold px-4 py-1 rounded-full">MÁS ELEGIDO</span>
+        <h3 class="font-bold text-xl">Crecimiento</h3>
+        <p class="text-white/55 text-sm mt-1">WhatsApp + Instagram con panel completo.</p>
+        <p class="mt-6"><span class="font-display text-3xl font-extrabold">990 €</span> <span class="text-white/50 text-sm">setup único</span></p>
+        <p class="mt-1"><span class="grad-text font-display text-3xl font-extrabold">189 €</span> <span class="text-white/50 text-sm">/mes</span></p>
+        <ul class="mt-6 space-y-2 text-sm text-white/75 flex-1">
+          <li>✓ Todo lo del plan Esencial</li>
+          <li>✓ Instagram DM incluido</li>
+          <li>✓ CRM Kanban de leads</li>
+          <li>✓ Reengagement de clientes</li>
+          <li>✓ Integración Google Agenda / Sheets</li>
+          <li>✓ Panel para tu equipo</li>
+        </ul>
+        <a href="https://wa.me/" class="mt-8 text-center px-6 py-3 rounded-full font-semibold text-[#0b0b14]" style="background: linear-gradient(90deg, var(--accent), var(--accent2));">Empezar</a>
+      </div>
+      <div class="card-3d glass rounded-3xl p-8 flex flex-col">
+        <h3 class="font-bold text-xl">Premium</h3>
+        <p class="text-white/55 text-sm mt-1">Una agente que cierra ventas por ti.</p>
+        <p class="mt-6"><span class="font-display text-3xl font-extrabold">1.900 €</span> <span class="text-white/50 text-sm">setup único</span></p>
+        <p class="mt-1"><span class="grad-text font-display text-3xl font-extrabold">349 €</span> <span class="text-white/50 text-sm">/mes</span></p>
+        <ul class="mt-6 space-y-2 text-sm text-white/75 flex-1">
+          <li>✓ Todo lo del plan Crecimiento</li>
+          <li>✓ Memoria de clientes: cierra pedidos y reservas sola</li>
+          <li>✓ Integraciones vía API</li>
+          <li>✓ Reportes semanales</li>
+          <li>✓ Soporte prioritario</li>
+        </ul>
+        <a href="https://wa.me/" class="mt-8 text-center px-6 py-3 rounded-full glass font-semibold hover:bg-white/10 transition">Empezar</a>
+      </div>
+    </div>
+    <p class="text-center text-white/45 text-sm mt-10 reveal-3d">Menos que el salario de un comercial en España — y trabaja las 24 horas, los 365 días. Sin coste por asiento.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<footer class="py-24 text-center relative overflow-hidden">
+  <div class="absolute inset-0 opacity-20" style="background: radial-gradient(50% 60% at 50% 100%, rgba(124,108,255,.6), transparent 70%);"></div>
+  <div class="relative z-10 max-w-3xl mx-auto px-6">
+    <h2 class="text-3xl md:text-5xl font-extrabold reveal-3d">¿Hablamos de <span class="grad-text">tu negocio</span>?</h2>
+    <p class="text-white/60 mt-4 reveal-3d">Sesión de 20 minutos sin compromiso. Te enseñamos a Luna funcionando en vivo.</p>
+    <a href="https://wa.me/" class="inline-block mt-8 px-10 py-4 rounded-full font-semibold text-lg text-[#0b0b14] glow reveal-3d" style="background: linear-gradient(90deg, var(--accent), var(--accent2));">Agendar sesión gratuita</a>
+    <p class="mt-14 text-white/35 text-xs">Luna · Agente de IA — Nexo Digital · Sabadell / Barcelona</p>
+  </div>
+</footer>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+// Hero intro
+gsap.from('.hero-el', { y: 40, opacity: 0, duration: 1, stagger: 0.12, ease: 'power3.out' });
+
+// Phone 3D tilt + float
+const phone = document.getElementById('phone');
+if (phone) {
+  gsap.set(phone, { rotateY: -18, rotateX: 8 });
+  gsap.to(phone, { y: -18, duration: 2.6, yoyo: true, repeat: -1, ease: 'sine.inOut' });
+  const header = document.querySelector('header');
+  header.addEventListener('mousemove', (e) => {
+    const r = header.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5;
+    const y = (e.clientY - r.top) / r.height - 0.5;
+    gsap.to(phone, { rotateY: -18 + x * 24, rotateX: 8 - y * 16, duration: 0.6, ease: 'power2.out' });
+  });
+  gsap.from('.chat-bubble', { y: 16, opacity: 0, duration: .5, stagger: .35, delay: .8, ease: 'power2.out' });
+}
+
+// Counters
+document.querySelectorAll('[data-count]').forEach(el => {
+  gsap.to(el, { innerText: el.dataset.count, duration: 1.6, snap: { innerText: 1 }, delay: .6, ease: 'power1.out' });
+});
+
+// 3D scroll reveals
+document.querySelectorAll('.reveal-3d').forEach(el => {
+  gsap.fromTo(el,
+    { opacity: 0, rotateX: 28, y: 60, transformOrigin: '50% 100%' },
+    { opacity: 1, rotateX: 0, y: 0, duration: 1, ease: 'power3.out',
+      scrollTrigger: { trigger: el, start: 'top 85%' } });
+});
+
+// Cards: staggered flip-in
+gsap.utils.toArray('.card-3d').forEach((card, i) => {
+  if (card.id === 'phone') return;
+  gsap.fromTo(card,
+    { opacity: 0, rotateX: -35, y: 70, transformOrigin: '50% 100%' },
+    { opacity: 1, rotateX: 0, y: 0, duration: .9, ease: 'power3.out',
+      scrollTrigger: { trigger: card, start: 'top 88%' }, delay: (i % 3) * 0.1 });
+});
+
+// Section perspective drift (3D depth on scroll)
+gsap.utils.toArray('section').forEach(sec => {
+  gsap.fromTo(sec, { scale: .97 }, { scale: 1, ease: 'none',
+    scrollTrigger: { trigger: sec, start: 'top bottom', end: 'top 40%', scrub: true } });
+});
+</script>
+</body>
+</html>

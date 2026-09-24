@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: #7c6cff;
+  --accent2: #00e0b8;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0b0b14;
+  color: #eceaf6;
+  overflow-x: hidden;
+}
+
+.font-display { font-family: 'Sora', sans-serif; }
+
+.grad-text {
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(14px);
+}
+
+.badge {
+  background: linear-gradient(90deg, rgba(124, 108, 255, 0.18), rgba(0, 224, 184, 0.18));
+  border: 1px solid rgba(124, 108, 255, 0.35);
+}
+
+.glow { box-shadow: 0 0 80px -20px rgba(124, 108, 255, 0.55); }
+
+::selection { background: var(--accent); color: #fff; }
+
+/* fundo do chat estilo WhatsApp escuro */
+.wa-bg {
+  background-color: #0b141a;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+/* indicador de "digitando..." */
+.typing-dot {
+  width: 6px; height: 6px; border-radius: 9999px;
+  background: #8696a0; display: inline-block;
+  animation: typing-bounce 1.2s infinite ease-in-out;
+}
+.typing-dot:nth-child(2) { animation-delay: 0.15s; }
+.typing-dot:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes typing-bounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-4px); opacity: 1; }
+}
+
+/* faixa marquee */
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee-track { animation: marquee 28s linear infinite; }
+
+/* flutuação suave do telefone no hero */
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+.animate-float { animation: float 5s ease-in-out infinite; }

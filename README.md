@@ -1,25 +1,31 @@
-# Luna · Landing Sabadell / Barcelona
+# Luna · Sabadell Landing
 
-Landing page (folheto digital) da proposta de pacotes de agente de IA para o prospect de Sabadell/Barcelona.
+Landing page de Luna (agente de IA da Nexo Digital) para o mercado de Sabadell / Barcelona.
 
-- HTML único + Tailwind (CDN) + GSAP com ScrollTrigger
-- Efeitos 3D no scroll (perspective, rotateX/Y, tilt do mockup de telefone)
-- Seções: hero, benefícios, como funciona, setup vs mensalidad, planos (EUR), CTA
-- Idioma: espanhol (client-facing)
+**Preview:** https://jhin1v9.github.io/luna-sabadell-landing/
 
-## Planos apresentados
+## Stack (v2 — 2026-09-24)
 
-| Plano | Setup | Mensal |
-|---|---|---|
-| Esencial | 490 € | 89 €/mês |
-| Crescimiento | 990 € | 189 €/mês |
-| Premium | 1.900 € | 349 €/mês |
+- React 18 + Vite 5 + Tailwind CSS 3
+- Framer Motion (animações) + Lucide React (ícones — sem emojis)
+- Mocks animados de WhatsApp e Instagram DM (componente `PhoneMock`)
 
-## Pendente antes de enviar ao cliente
+## Estrutura
 
-- Trocar os links `https://wa.me/` pelos números reais de contato.
-- Definir domínio se for publicar fora do GitHub Pages.
+- `index.html` + `assets/` — build de produção (servido pelo GitHub Pages, **não editar à mão**)
+- `app/` — código-fonte
 
-## Preview local
+## Desenvolver
 
-Abrir `index.html` direto no navegador (tudo via CDN, sem build).
+```bash
+cd app
+pnpm install
+pnpm dev        # servidor local
+pnpm build      # gera dist/ — copiar para a raiz do repo antes do commit
+```
+
+## Configurar número de WhatsApp
+
+Todos os botões usam o link do `wa.me` definido em `app/src/config.js`
+(`WA_NUMBER`). Trocar pelo número real da Nexo em formato internacional
+sem `+` (ex: `34612345678`) e rodar `pnpm build` + copiar `dist/` para a raiz.
